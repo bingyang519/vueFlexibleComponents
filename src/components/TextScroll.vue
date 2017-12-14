@@ -30,7 +30,7 @@ export default {
         return {
             count: 0, // 当前索引
             intervalId: null, // 定时器ID
-            playTime: 2000, // 动画切换时间
+            playTime: 2000, // 定时器执行间隔
 
         }
     },
