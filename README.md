@@ -39,6 +39,7 @@
   - 组件位置：[src/components/TextScroll.vue](https://github.com/bingyang519/vueFlexibleComponents/tree/master/src/components)（不能npm，只能手动下载使用）
   - 下载并放入自己项目中 —— import 引入组件 —— components中注册组件 —— 使用
   - props
+
       | props| 说明 | 类型 | 可选值 | 默认值 |
       | - | - | - | - | - |
       | toastShow | 控制显示框显示、隐藏。需添加[.sync修饰符](https://cn.vuejs.org/v2/guide/components.html#sync-修饰符)才能自动关闭，详见例子 | Boolean| false</br>true | false |
@@ -49,12 +50,13 @@
       | position| 弹框位置（距顶） | String |  | '50%' |
 
   -  $emit
+
       | $emit| 说明 | 参数 |
       | - | - | - |
       | toastClose| 弹框关闭回调 |  |
 
    - 示例
-      ```
+      ```vue
         // 默认效果，只有提示信息
         <toast
             message = '默认信息'
