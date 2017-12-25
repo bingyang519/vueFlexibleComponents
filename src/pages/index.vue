@@ -6,6 +6,10 @@
               <span>文字滚动</span>
               <em>&gt;</em>
           </router-link>
+          <router-link to='/Toast' tag="li">
+              <span>弹出提示框</span>
+              <em>&gt;</em>
+          </router-link>
       </ul>
   </div>
 </template>
