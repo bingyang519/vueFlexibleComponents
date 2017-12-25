@@ -30,7 +30,67 @@
         scrollType="scroll-up"
     >
     </text-scroll>
-   ```
+    ```
+## [Toast -- 显示框](https://segmentfault.com/a/1190000012432631)
+
+- ### 效果展示
+  ![效果展示](https://sfault-image.b0.upaiyun.com/408/670/4086701058-5a40edd6eec66_articlex)
+- ### 使用说明
+  - 组件位置：[src/components/TextScroll.vue](https://github.com/bingyang519/vueFlexibleComponents/tree/master/src/components)（不能npm，只能手动下载使用）
+  - 下载并放入自己项目中 —— import 引入组件 —— components中注册组件 —— 使用
+  - props
+      | props| 说明 | 类型 | 可选值 | 默认值 |
+      | - | - | - | - | - |
+      | toastShow | 控制显示框显示、隐藏。需添加[.sync修饰符](https://cn.vuejs.org/v2/guide/components.html#sync-修饰符)才能自动关闭，详见例子 | Boolean| false</br>true | false |
+      | message| 提示信息 | String |  |  |
+      | iconClass| icon小图标| String| success</br>warning</br>close |  |
+      | iconImage| 自定义小图标(图片需require引入) |  | |  |
+      | duration| 定时器(毫秒)，控制弹框显示时间，负数代表不执行定时任务| Number|  | 1500 |
+      | position| 弹框位置（距顶） | String |  | '50%' |
+
+  -  $emit
+      | $emit| 说明 | 参数 |
+      | - | - | - |
+      | toastClose| 弹框关闭回调 |  |
+
+   - 示例
+      ```
+        // 默认效果，只有提示信息
+        <toast
+            message = '默认信息'
+            :toastShow.sync = 'isShow1'  // 需添加.sync修饰符，才能达到自动关闭的效果，否则只能监听toastClose手动关闭
+        ></toast>                        // 关于sync的说明，请看官网（主要是为了达到双向数据绑定，子组件修改父组件状态）
+
+        // 增加自带小图标
+        <toast
+            message = 'success'
+            iconClass = 'success'
+            :toastShow.sync = 'isShow2'
+        ></toast>
+      ```
+      ```vue
+        // 自定义类型
+        <toast
+            message = '自定义'
+            position = '70%'
+            :duration = '-1'  //负数代表不执行定时任务，自己根据需要去关闭
+            :iconImage='bg'   // 自定义icon小图标，在data中需require引入，看下面
+            :toastShow = 'isShow5'  // 因为需要手动关闭，所以不需要.sync了
+            @toastClose = 'isClose5'  // 监听回调，手动关闭，看下面
+        ></toast>
+
+        data() {
+            return {
+                this.isShow5 : true,
+                bg: require('../assets/logo.png'), // 图片必须用require进来
+            }
+        },
+        isClose5() {
+            setTimeout(()=>{
+                this.isShow5 = false;
+            }, 2000)
+        }
+      ```
 
 ---
 ## 持续更新中。。。
@@ -40,7 +100,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8780
 npm run dev
 
 # build for production with minification

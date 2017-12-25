@@ -2,29 +2,25 @@
   <div class="PageToast">
       <toast
         message = '默认信息'
-        :toastShow = 'isShow1'
-        @toastClose = 'isClose1'
+        :toastShow.sync = 'isShow1'
       ></toast>
 
       <toast
         message = 'success'
         iconClass = 'success'
-        :toastShow = 'isShow2'
-        @toastClose = 'isClose2'
+        :toastShow.sync = 'isShow2'
       ></toast>
 
       <toast
         message = 'warning'
         iconClass = 'warning'
-        :toastShow = 'isShow3'
-        @toastClose = 'isClose3'
+        :toastShow.sync = 'isShow3'
       ></toast>
 
       <toast
         message = 'close'
         iconClass = 'close'
-        :toastShow = 'isShow4'
-        @toastClose = 'isClose4'
+        :toastShow.sync = 'isShow4'
       ></toast>
 
     <!-- 注意：duration 使用v-bind绑定，'5000'才为Number类型，否则为String类型 -->
@@ -32,7 +28,7 @@
       <toast
         message = '自定义'
         position = '70%'
-        :duration = '5000'
+        :duration = '-1'
         :iconImage='bg'
         :toastShow = 'isShow5'
         @toastClose = 'isClose5'
@@ -42,7 +38,7 @@
       <button @click="button2">icon--success</button>
       <button @click="button3">icon--warning</button>
       <button @click="button4">icon--close</button>
-      <button @click="button5">自定义(位置、图片)</button>
+      <button @click="button5">自定义(位置、图片、时间)</button>
   </div>
 </template>
 <script>
@@ -66,36 +62,29 @@ export default {
         button1() {
             this.isShow1 = true
         },
-        isClose1() {
-            this.isShow1 = false;
-        },
 
         button2() {
             this.isShow2 = true
         },
-        isClose2() {
-            this.isShow2 = false;
-        },
+
 
         button3() {
             this.isShow3 = true
         },
-        isClose3() {
-            this.isShow3 = false;
-        },
+
 
         button4() {
             this.isShow4 = true
         },
-        isClose4() {
-            this.isShow4 = false;
-        },
+
 
         button5() {
             this.isShow5 = true
         },
         isClose5() {
-            this.isShow5 = false;
+            setTimeout(()=>{
+                this.isShow5 = false;
+            }, 2000)
         }
     }
 }

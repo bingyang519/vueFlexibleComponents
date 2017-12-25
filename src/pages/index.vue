@@ -1,13 +1,13 @@
 <template>
   <div class="Index">
-      <h6>基于 flexible.js 的 Vue 组件</h6>
+      <h6><a href="https://github.com/bingyang519/vueFlexibleComponents"> 基于 flexible.js 的 Vue 组件</a></h6>
       <ul>
           <router-link to='/TextScroll' tag="li">
               <span>文字滚动</span>
               <em>&gt;</em>
           </router-link>
           <router-link to='/Toast' tag="li">
-              <span>弹出提示框</span>
+              <span>提示框</span>
               <em>&gt;</em>
           </router-link>
       </ul>
@@ -36,6 +36,10 @@ export default {
     padding: 0.3rem 0;
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #e5e5e5;/*no*/
+}
+.Index ul li:nth-child(1){
+    border: none;
 }
 .Index ul li span{
     font-size: 28px;/*px*/

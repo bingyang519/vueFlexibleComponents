@@ -82,7 +82,8 @@ export default {
                     this.$emit('toastClose');
                 } else {
                     setTimeout(()=>{
-                        this.$emit('toastClose')
+                        this.$emit('update:toastShow', false) // 利用了.sync达到双向数据绑定
+                        this.$emit('toastClose');
                     }, this.duration)
                 }
             }
