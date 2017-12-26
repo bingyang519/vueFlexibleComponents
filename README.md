@@ -31,7 +31,7 @@
     >
     </text-scroll>
     ```
-## [Toast -- 显示框](https://segmentfault.com/a/1190000012432631)
+## [Toast -- 显示框](https://segmentfault.com/a/1190000012580979)
 
 - ### 效果展示
   ![效果展示](https://sfault-image.b0.upaiyun.com/408/670/4086701058-5a40edd6eec66_articlex)
